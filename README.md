@@ -1,6 +1,6 @@
 # Learning Causal Representations of Single Cells via Sparse Mechanism Shift Modeling
 
-
+This repository contains an implementation of the sparse VAE framework applied to single-cell perturbation data, as descibed in ["Learning Causal Representations of Single Cells via Sparse Mechanism Shift Modeling"](https://arxiv.org/abs/2211.03553). 
 
 
 [![Stars](https://img.shields.io/github/stars/Genentech/sVAE?logo=GitHub&color=yellow)](https://github.com/Genentech/sVAE/stargazers)
@@ -20,7 +20,7 @@ Download or clone this repository. Then from inside the folder simply run:
 pip install -e . 
 ```
 
-### Demo example
+### Example
 An example script for the sandbox can be found in ``` entry_points/demo.py```.
 The code for reproducing the real data analysis can be found in ``` entry_points/run_real_data_replogle_wandb.py```.
 
@@ -30,7 +30,7 @@ The code for reproducing the real data analysis can be found in ``` entry_points
 @article{svae+,
   title={Learning Causal Representations of Single Cells via Sparse Mechanism Shift Modeling},
   author={Lopez, Romain and Tagasovska, Natasa and Ra, Stephen and Cho, Kyunghyun and Pritchard, Jonathan K. and Regev, Aviv },
-  journal={arXiv},
+  journal={https://arxiv.org/abs/2211.03553},
   year={2022},
 }
 ```
