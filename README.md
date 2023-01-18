@@ -30,7 +30,7 @@ The code for reproducing the real data analysis can be found in ``` entry_points
 @article{svae+,
   title={Learning Causal Representations of Single Cells via Sparse Mechanism Shift Modeling},
   author={Lopez, Romain and Tagasovska, Natasa and Ra, Stephen and Cho, Kyunghyun and Pritchard, Jonathan K. and Regev, Aviv },
-  journal={https://arxiv.org/abs/2211.03553},
-  year={2022},
+  journal={Conference on Causal Learning and Reasoning},
+  year={2023},
 }
 ```
