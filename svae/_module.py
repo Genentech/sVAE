@@ -348,14 +348,22 @@ class SpikeSlabVAEModule(BaseModuleClass):
 
         kl_discrete = torch.sum(q_discrete * torch.log(q_discrete / p_discrete))
         prior_w = torch.ones_like(self.action_prior_logit_weight)
-        logp_w = (
+        logp_qw = (
             torch.distributions.Beta(prior_w, prior_w * self.sparse_mask_penalty)
             .log_prob(q_discrete)
             .sum()
         )
+        logp_w = (
+            torch.distributions.Beta(prior_w, prior_w * self.sparse_mask_penalty)
+            .log_prob(p_discrete)
+            .sum()
+        )
 
         if self.use_global_kl:
-            kl_global = torch.tensor(0.0) + kl_discrete - logp_w
+            # Implementation detail described in the paper: line below describes the mathematical derivations in the paper
+            # kl_global = torch.tensor(0.0) + kl_discrete - logp_w
+            # Line below is the practical implementation, setting p_discrete to q_discrete
+            # kl_global = torch.tensor(0.0) - logp_qw
             loss = (
                 n_obs * torch.mean(reconst_loss + weighted_kl_local)
                 + kl_weight * kl_global
